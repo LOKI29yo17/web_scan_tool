@@ -1,0 +1,201 @@
+{
+  "base_url": "http://localhost:3000",
+  "endpoint_count": 15,
+  "page_count": 12,
+  "auth_state": "authenticated",
+  "cookies": {
+    "language": "en",
+    "_gh_sess": "6qPMbzl4GQmKz%2FXuYR%2Bg1%2Bgr7ytXPM1WkH2IH6AVKedAZNQ1tDI0qsYHrZU18oH4LblE5FM54mpysgCwi8JIsM8iZgrBejXu3LMbBUZ%2FbuFVhu7ikNjocYaNZjByWX8tTjY3CFlav8Umbwk5Ez2VbvEMKToFiOHmT5%2BIM%2F2uZO6BXljAGe%2BTGXYUOwlRgmIunfd6JLCyHs%2BqTfsWnC9oHpcYzgWqYigPcsl3p%2FgU3aXfPGbLjKy6igdS6PENbYOpbwCUstoUwPm7Yn2Tbu%2BZ1g%3D%3D--3PTeHpmySujOGyoG--Em%2BY9JMogGBvzk9F02ICPQ%3D%3D",
+    "_octo": "GH1.1.1323182780.1789719431",
+    "logged_in": "no",
+    "cpu_bucket": "xlg",
+    "preferred_color_mode": "light",
+    "tz": "Asia%2FAden"
+  },
+  "endpoints": [
+    {
+      "url": "http://localhost:3000",
+      "method": "GET",
+      "form_action": "http://localhost:3000",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000"
+    },
+    {
+      "url": "http://localhost:3000/#/login",
+      "method": "get",
+      "form_action": "http://localhost:3000/#/login",
+      "inputs": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "password",
+          "type": "password",
+          "value": ""
+        },
+        {
+          "name": "rememberMe-input",
+          "type": "checkbox",
+          "value": "on"
+        }
+      ],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/login"
+    },
+    {
+      "url": "http://localhost:3000/#/login",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/login",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/login"
+    },
+    {
+      "url": "http://localhost:3000/#/contact",
+      "method": "get",
+      "form_action": "http://localhost:3000/#/contact",
+      "inputs": [
+        {
+          "name": "userId",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "mat-input-3",
+          "type": "text",
+          "value": "anonymous"
+        },
+        {
+          "name": "comment",
+          "type": "textarea",
+          "value": ""
+        },
+        {
+          "name": "captchaControl",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/contact"
+    },
+    {
+      "url": "http://localhost:3000/#/contact",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/contact",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/contact"
+    },
+    {
+      "url": "http://localhost:3000/#/chatbot",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/chatbot",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/chatbot"
+    },
+    {
+      "url": "http://localhost:3000/#/about",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/about",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/about"
+    },
+    {
+      "url": "http://localhost:3000/#/photo-wall",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/photo-wall",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/photo-wall"
+    },
+    {
+      "url": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "method": "GET",
+      "form_action": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "inputs": [
+        {
+          "name": "to",
+          "type": "url_param",
+          "value": "https://github.com/juice-shop/juice-shop"
+        }
+      ],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+    },
+    {
+      "url": "http://localhost:3000/#/forgot-password",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/forgot-password",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/forgot-password"
+    },
+    {
+      "url": "http://localhost:3000/#/register",
+      "method": "get",
+      "form_action": "http://localhost:3000/#/register",
+      "inputs": [
+        {
+          "name": "emailControl",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "passwordControl",
+          "type": "password",
+          "value": ""
+        },
+        {
+          "name": "repeatPasswordControl",
+          "type": "password",
+          "value": ""
+        },
+        {
+          "name": "securityAnswerControl",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/register"
+    },
+    {
+      "url": "http://localhost:3000/#/register",
+      "method": "GET",
+      "form_action": "http://localhost:3000/#/register",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/#/register"
+    },
+    {
+      "url": "http://localhost:3000/ftp/legal.md",
+      "method": "GET",
+      "form_action": "http://localhost:3000/ftp/legal.md",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/ftp/legal.md"
+    },
+    {
+      "url": "http://localhost:3000/",
+      "method": "GET",
+      "form_action": "http://localhost:3000/",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000/"
+    },
+    {
+      "url": "http://localhost:3000\\",
+      "method": "GET",
+      "form_action": "http://localhost:3000\\",
+      "inputs": [],
+      "has_file_upload": false,
+      "source_page": "http://localhost:3000\\"
+    }
+  ]
+}
